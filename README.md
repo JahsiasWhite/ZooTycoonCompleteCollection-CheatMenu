@@ -1,15 +1,10 @@
 # Zoo Tycoon cheat menu
 
 Simple cheat menu for [Zoo Tycoo Complete Collection (2003)](https://www.myabandonware.com/game/zoo-tycoon-complete-collection-dzx)
-Also works with REDDIT
 
-## Offsets
+## Installing
 
-The memory offsets used in the cheat menu can be found in the `offsets.txt` file. These offsets are static values that correspond to specific memory locations in the game.
-
-The `extra_info.txt` file contains a collection of code snippets and information gathered from the Ghidra. These snippets provide additional context and details about the game's internals.
-
-## Installing cheat menu
+## Building the cheat menu
 
 - In `program.cs`, install all imported packages.
   - If using Visual Studio, you can install from NuGet Package Manager.
@@ -17,8 +12,8 @@ The `extra_info.txt` file contains a collection of code snippets and information
 
 ## Using cheat menu
 
-Launch Zoo Tycoon.
-Once you are loaded in a map, you can launch the program and start using
+Launch Zoo Tycoon and load into a map<br>
+Once you are loaded in, launch the program and start playing
 
 ## Features
 
@@ -26,29 +21,27 @@ Once you are loaded in a map, you can launch the program and start using
 
 - Toggle spending
 - Change current money
+- More!
 
 ### General Game Configuration
 
 - Max Guests
-- Max admission price
 - More!
 
-### Animal Configuration
+### Animal Configuration TODO
 
 - Animals live forever
 - No habitat preference needed
 - Reproduction chance
 - More!
 
-### Shelter Configuration
+### Shelter Configuration TODO
 
-- Cost
 - Capacity
 
-### Fence Configuration
+### Fence Configuration TODO
 
 - Invincible Fences
-
 - Strength
 - Toggle climbable
 - More!
@@ -58,3 +51,9 @@ Once you are loaded in a map, you can launch the program and start using
 - Max tank height
 - Max show length
 - More!
+
+## Offsets
+
+The memory offsets used in the cheat menu can be found in the `offsets.txt` file. These offsets are static values that correspond to specific memory locations in the game.
+
+The `extra_info.txt` file contains a collection of code snippets and information gathered mostly from Ghidra. These snippets provide additional context and details about the game's internals.

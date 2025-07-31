@@ -1,14 +1,23 @@
-# Zoo Tycoon cheat menu
+# Zoo Tycoon Cheat Menu
 
 Simple cheat menu for [Zoo Tycoo Complete Collection (2003)](https://www.myabandonware.com/game/zoo-tycoon-complete-collection-dzx)
 
 ## Installing
 
-## Running the exe (No setup required)
+### Running the exe (No setup required)
 
-If you don't want to build the cheat menu yourself, you can just download and run the .exe
+If you don’t want to build the cheat menu yourself, just run one of the prebuilt .exe files included:
 
-## Building the cheat menu
+- Recommended:
+
+  - `ZooTycoonCheatMenu.exe`</br>
+
+- Smaller alternative (requires .NET Runtime):
+
+  - `ZooTycoonCheatMenu_WONET.exe`</br>
+    (Much smaller file size, but .NET must already be installed)
+
+### Building the cheat menu
 
 1. Clone this repository.
 2. Open the solution (`.sln`) or `Program.cs` in **Visual Studio**.
@@ -19,6 +28,8 @@ If you don't want to build the cheat menu yourself, you can just download and ru
 4. Set the target platform to **x86**:
    - Go to `Build > Configuration Manager > Platform` and select `x86`
 5. Build the project (`Ctrl+Shift+B` or Build > Build Solution)
+
+- Self contained build: `dotnet publish -r win-x86 -c Release --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true`
 
 ## Using cheat menu
 

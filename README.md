@@ -1,6 +1,6 @@
 # Zoo Tycoon Cheat Menu
 
-Simple cheat menu for [Zoo Tycoo Complete Collection (2003)](https://www.myabandonware.com/game/zoo-tycoon-complete-collection-dzx)
+Simple cheat menu for [Zoo Tycoon Complete Collection (2003)](https://github.com/JahsiasWhite/ZooTycoonCompleteCollection-NOCD)
 
 ## Installing
 

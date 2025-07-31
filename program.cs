@@ -41,7 +41,7 @@ namespace CheatMenu
         /* Memory Addresses */
         int costToggleAddress = 0x1EF79;
         int seafloorCaveCapacityAddress = 0x0023ACF4;
-        int largeConcreteShelterCapacityAddress = 0x00238050;
+        int largeConcreteShelterCapacityAddress = 0x00238040;
 
         // GameObject Address
         int gameConfigAddress = 0x0238048;
@@ -456,6 +456,13 @@ namespace CheatMenu
 
             while (true)
             {
+
+                // TEST
+                // var readBuffer = new byte[4];
+                // IntPtr bytesRead;
+                // ReadProcessMemory(process.Handle, (IntPtr)(process.MainModule.BaseAddress + 0x00b4d0e), readBuffer , 4, out bytesRead);
+                // Console.WriteLine("Base address:  " + readBuffer[0] + " " + readBuffer[1] + " " + readBuffer[2] + " " + readBuffer[3]);
+
                 updateItemCostDisabled(process, itemCostDisabled, costToggleAddress);
 
                 updateMoney(process, swed, moneyAddress);
@@ -564,7 +571,7 @@ namespace CheatMenu
                 switch (memAddress.Name)
                 {
                     case "maxAdmissionPriceAddress":
-                        Console.WriteLine($"TTTTTChanged {memAddress.Name} to: {memAddress.Value}");
+                        //Console.WriteLine($"TTTTTChanged {memAddress.Name} to: {memAddress.Value}");
                         maxAdmissionPrice = memAddress.Value;
                         break;
                     case "minAdmissionPriceAddress":
@@ -590,7 +597,10 @@ namespace CheatMenu
         private void updateShelters(Process process, Swed swed, int shelterAddress, int largeConcreteShelterCapacityAddress)
         {
             IntPtr newShelterAddress = swed.ReadPointer(process.MainModule.BaseAddress, shelterAddress) + 0x2F914;
-            IntPtr lcsAddress = swed.ReadPointer(process.MainModule.BaseAddress, largeConcreteShelterCapacityAddress) + 0x2E51C;
+            IntPtr lcsAddress = swed.ReadPointer(process.MainModule.BaseAddress, largeConcreteShelterCapacityAddress);
+            //lcsAddress = swed.ReadPointer(lcsAddress + 0x98);
+            //lcsAddress = swed.ReadPointer(lcsAddress + 0x2A4);
+            //lcsAddress = swed.ReadPointer(lcsAddress + 0x3F0);
 
             //Console.WriteLine("Shelter address (hex): 0x{0:X}", newShelterAddress);
             //Console.WriteLine("Shelter address (hex): 0x{0:X}", lcsAddress);
@@ -612,7 +622,9 @@ namespace CheatMenu
                 byte[] lcsCapacity = swed.ReadBytes(lcsAddress, 1);
                 seafloorCaveCapacity = buffer[0];
                 largeConcreteShelterCapacity = lcsCapacity[0];
-                //Console.WriteLine("Shelter Data: " + lcsCapacity[0]);
+                Console.WriteLine("Shelter Data: " + lcsCapacity[0]);
+                Console.WriteLine("POINTER: " + swed.ReadFloat(lcsAddress));
+
             }
         }
 

@@ -2,7 +2,7 @@
 
 Detailed breakdown of some memory structures, offsets, and known default values.
 
-## Game Config (`0x00238048`)
+## Base Game Config (`0x00238048`)
 
 | Offset | Field Name                | Type  | Notes                | Default Value |
 | ------ | ------------------------- | ----- | -------------------- | ------------- |

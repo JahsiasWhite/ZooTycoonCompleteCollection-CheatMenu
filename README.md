@@ -6,34 +6,37 @@ Simple cheat menu for [Zoo Tycoo Complete Collection (2003)](https://www.myaband
 
 ## Building the cheat menu
 
-- In `program.cs`, install all imported packages.
-  - If using Visual Studio, you can install from NuGet Package Manager.
-- Set the CPU platform to x86
+1. Clone this repository.
+2. Open the solution (`.sln`) or `Program.cs` in **Visual Studio**.
+3. Install all imported packages
+
+- If using Visual Studio, you can install from NuGet Package Manager
+
+4. Set the target platform to **x86**:
+   - Go to `Build > Configuration Manager > Platform` and select `x86`
+5. Build the project (`Ctrl+Shift+B` or Build > Build Solution)
 
 ## Using cheat menu
 
-Launch Zoo Tycoon and load into a map<br>
-Once you are loaded in, launch the program and start playing
+1. Start **Zoo Tycoon Complete Collection (2003)** and load into a map
+2. Once you're fully in-game, run the cheat menu executable
 
-## Features
+## Some Features
 
 ### Money
 
 - Toggle spending
 - Change current money
-- More!
 
 ### General Game Configuration
 
 - Max Guests
-- More!
 
 ### Animal Configuration TODO
 
 - Animals live forever
 - No habitat preference needed
 - Reproduction chance
-- More!
 
 ### Shelter Configuration TODO
 
@@ -44,16 +47,12 @@ Once you are loaded in, launch the program and start playing
 - Invincible Fences
 - Strength
 - Toggle climbable
-- More!
 
 #### Marine Mania - Tank & Show Configuration
 
 - Max tank height
 - Max show length
-- More!
 
 ## Offsets
 
 The memory offsets used in the cheat menu can be found in the `offsets.txt` file. These offsets are static values that correspond to specific memory locations in the game.
-
-The `extra_info.txt` file contains a collection of code snippets and information gathered mostly from Ghidra. These snippets provide additional context and details about the game's internals.

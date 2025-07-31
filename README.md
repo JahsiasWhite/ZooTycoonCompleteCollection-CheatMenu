@@ -2,6 +2,8 @@
 
 Simple cheat menu for [Zoo Tycoon Complete Collection (2003)](https://github.com/JahsiasWhite/ZooTycoonCompleteCollection-NOCD)
 
+![Cheat Menu Example](assets/example.png)
+
 ## Installing
 
 ### Running the exe (No setup required)
@@ -68,6 +70,12 @@ If you don’t want to build the cheat menu yourself, just run one of the prebui
 - Max tank height
 - Max show length
 
-## Offsets
+## How It Works
 
-The memory offsets used in the cheat menu can be found in the `offsets.txt` file. These offsets are static values that correspond to specific memory locations in the game.
+This project modifies memory of Zoo Tycoon Complete Collection (2003) at runtime to change gameplay behavior
+
+- Uses WinAPI functions `ReadProcessMemory` and `WriteProcessMemory` to interact with the running game's memory.
+
+- All memory addresses were found with Ghidra and are documented in Offsets.md. These are static values that correspond to specific memory locations in the game.
+
+- The main thread runs ImGui to handle the UI while a background thread handles memory writes/reads

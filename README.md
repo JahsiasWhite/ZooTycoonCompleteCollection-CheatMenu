@@ -4,6 +4,10 @@ Simple cheat menu for [Zoo Tycoo Complete Collection (2003)](https://www.myaband
 
 ## Installing
 
+## Running the exe (No setup required)
+
+If you don't want to build the cheat menu yourself, you can just download and run the .exe
+
 ## Building the cheat menu
 
 1. Clone this repository.

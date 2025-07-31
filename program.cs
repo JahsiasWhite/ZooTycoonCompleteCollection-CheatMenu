@@ -154,8 +154,11 @@ namespace CheatMenu
                 RenderMoneyTab();
                 RenderTanksTab();
                 RenderBuildingsTab();
-                RenderControlsTab();
-                RenderMemoryTab();
+
+                // TODO: Partially implemented
+                // RenderControlsTab();
+                // RenderMemoryTab();
+
                 ImGui.EndTabBar();
             }
 
@@ -354,23 +357,25 @@ namespace CheatMenu
 
             // Version info
             ImGui.SameLine(ImGui.GetWindowWidth() - 100);
-            ImGui.TextDisabled("v1.0.0");
+            ImGui.TextDisabled("v0.5.0");
         }
 
         private void HandleKeyRemapping(string control)
         {
-            ImGuiIOPtr io = ImGui.GetIO();
-            for (int key = 0; key < (int)ImGuiKey.COUNT; key++)
+            for (int vKey = 0x08; vKey <= 0xFE; vKey++)
             {
-                if (io.KeysDown[key])
+                short keyState = GetAsyncKeyState(vKey);
+                if ((keyState & 0x8000) != 0) // Key is pressed
                 {
-                    SetKeyMapping(control, (ImGuiKey)key);
+                    ImGuiKey mappedKey = (ImGuiKey)vKey; // Map virtual key to ImGuiKey (approximate)
+                    SetKeyMapping(control, mappedKey);
                     waitingForKeyPress = false;
                     controlToRemap = null;
                     break;
                 }
             }
         }
+
 
         private string GetKeyMapping(string control)
         {

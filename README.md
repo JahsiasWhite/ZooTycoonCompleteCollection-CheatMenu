@@ -20,7 +20,7 @@ If you don’t want to build the cheat menu yourself, just run one of the prebui
 ### Building the cheat menu
 
 1. Clone this repository.
-2. Open the solution (`.sln`) or `Program.cs` in **Visual Studio**.
+2. In the /src folder, open the solution (`.sln`) or `Program.cs` in **Visual Studio**.
 3. Install all imported packages
 
 - If using Visual Studio, you can install from NuGet Package Manager
